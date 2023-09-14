@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import { Routes, Route } from 'react-router-dom';
+import {useState} from "react";
 import './App.css';
 
 
@@ -21,4 +22,22 @@ const Page1 = () => (
 const Page2 = () => (
   <h1>2</h1>
 )
+
+function Navbar() {
+  const [click, setClick] = useState(false);
+
+  const handleClick = () => setClick(!click);
+    
+  return (
+    <>
+      <nav className='navbar'>
+          <div className='navbar-container'>
+               <Link to='/' className='navbar-logo'>
+                 WIS
+              </Link>
+          </div>
+      </nav>
+    </>
+  )
+}
 export default App;
